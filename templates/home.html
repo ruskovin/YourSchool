@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  HOME
+{% endblock title %}
+{% block content %}
+  <div id="carouselExampleSlidesOnly"
+       class="carousel slide"
+       data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100"
+             src="{% static "images/classroom2.jpg" %}"
+             alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100"
+             src="{% static "images/classroom3.jpg" %}"
+             alt="Second slide">
+      </div>
+    </div>
+  </div>
+  <section class="features page-section" id="features">
+    <div class="features-left">
+      <h1>Features</h1>
+    </div>
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="feature card">
+            <i class="fa-regular fa-message fa-5x" style="color:#000000"></i>  
+            <div class="feature-body card-body">
+              <h5 class="card-title">Chat</h5>
+              <p class="card-text">
+                Chat with your teachers and classmates and solve problems while at home.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="feature card">
+            <i class="fa-solid fa-gears fa-5x" style='color:#000000'></i>
+            <div class="feature-body card-body">
+              <h5 class="card-title">Easy to use</h5>
+              <p class="card-text">
+                A Simple and user-friendly interface to make all sections easily accessible.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="feature card">
+            <img src="{% static "images/responsive.png"%}" style="height:110px">
+            <div class="feature-body card-body">
+              <h5 class="card-title">Available on all devices</h5>
+              <p class="card-text">
+                You can access the platform with laptop, tablet and mobile.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </section>
+  <section class="about page-section" id="about">
+    <div class="about-left">
+      <h1>ABOUT-US</h1>
+    </div>
+    <div class="about-right">{% lorem 1 p random %}</div>
+  </section>
+  <hr style="{width:50vw ; color:blue}"/>
+  <section class="contact d-flex-xs page-section" id="contact">
+    <div class="contact-left">
+      <h1>CONTACT-US</h1>
+    </div>
+    <div class="contact-right">
+      <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+        <!-- Name input-->
+        <div class="form-floating mb-3">
+          <input class="form-control"
+                 id="name"
+                 type="text"
+                 placeholder="Enter your name..."
+                 data-sb-validations="required"/>
+          <label for="name">Full name</label>
+          <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+        </div>
+        <!-- Email address input-->
+        <div class="form-floating mb-3">
+          <input class="form-control"
+                 id="email"
+                 type="email"
+                 placeholder="name@example.com"
+                 data-sb-validations="required,email"/>
+          <label for="email">Email address</label>
+          <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+          <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+        </div>
+        <!-- Phone number input-->
+        <div class="form-floating mb-3">
+          <input class="form-control"
+                 id="phone"
+                 type="tel"
+                 placeholder="(123) 456-7890"
+                 data-sb-validations="required"/>
+          <label for="phone">Phone number</label>
+          <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+        </div>
+        <!-- Message input-->
+        <div class="form-floating mb-3">
+          <textarea class="form-control"
+                    id="message"
+                    type="text"
+                    placeholder="Enter your message here..."
+                    style="height: 10rem"
+                    data-sb-validations="required"></textarea>
+          <label for="message">Message</label>
+          <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+        </div>
+        <!-- Submit success message-->
+        <!---->
+        <!-- This is what your users will see when the form-->
+        <!-- has successfully submitted--> 
+        <div class="d-none" id="submitSuccessMessage">
+          <div class="text-center mb-3">
+            <div class="fw-bolder">Form submission successful!</div>
+            To activate this form, sign up at
+            <br />
+            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+          </div>
+        </div>
+        <!-- Submit error message-->
+        <!---->
+        <!-- This is what your users will see when there is-->
+        <!-- an error submitting the form-->
+        <div class="d-none" id="submitErrorMessage">
+          <div class="text-center text-danger mb-3">Error sending message!</div>
+        </div>
+        <!-- Submit Button-->
+        <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+{% endblock content %}
